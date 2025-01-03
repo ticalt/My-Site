@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
                                             /* GENERAL */
 
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Montserrat";
     transition: 0.3s ease !important;
     scroll-behavior: smooth;
 }
@@ -138,8 +139,13 @@ header{
     padding-top: 50px;
     padding-bottom: 100px;
     /* margin-bottom: 50px; */
-    background-color: #2d2d2d; /* Основной фон */
+    background: linear-gradient(to right,#3a3a3a, #2d2d2d ); /* Основной фон */
 }
+
+.custom-reset {
+    all: unset; /* Убирает все стили */
+    display: block;
+  }
 
 .skills-content {
     display: flex;
@@ -155,7 +161,7 @@ header{
 }
 
 .skills-heading {
-    color: #464646;
+    color: #f88d00;
     font-size: 5.5rem;
     font-weight: lighter;
 }
@@ -181,7 +187,7 @@ body {
     height: 100vh;
 }
 
-.card {
+.c-card {
     position: relative;
     width: 170px !important;
     height: 170px !important;
@@ -192,23 +198,23 @@ body {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card:hover {
+.c-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.card img {
+.c-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
-.card:hover img {
+.c-card:hover img {
     transform: scale(1.1);
 }
 
-.card-title {
+.c-card-title {
     position: absolute;
     top: 0 !important;
     left: 0 !important;
@@ -227,7 +233,7 @@ body {
     transition: opacity 0.4s ease, transform 0.4s ease !important;
 }
 
-.card:hover .card-title {
+.c-card:hover .c-card-title {
     opacity: 1 !important; /* Делается видимым */
     transform: translateY(0) !important; /* Возвращается в центр */
 }
@@ -282,4 +288,55 @@ body {
 .aboutme-text {
     font-size: 20px;
     color: #fff;
+}
+
+.carousel-inner {
+    width: 100%; /* Ширина занимает весь доступный контейнер */
+    height: 600px; /* Задайте фиксированную высоту для карусели */
+    overflow: hidden; /* Скрыть лишнее, если изображение выходит за пределы */
+  }
+
+  .carousel-inner img {
+    width: 100%; /* Изображение растягивается на всю ширину */
+    height: 100%; /* Изображение занимает всю высоту */
+    object-fit: cover; /* Убедитесь, что изображение не искажено */
+  }
+
+.carousel-item {
+    position: relative;
+  }
+
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5), /* Верхняя часть затемнена */
+      rgba(0, 0, 0, 0.2)  /* Нижняя часть полупрозрачная */
+    );
+    z-index: 1; /* Слой выше изображения, но ниже текста и кнопок */
+  }
+
+  .carousel-caption,
+  .carousel-control-prev,
+  .carousel-control-next {
+    z-index: 2; /* Поверх затемнения */
+  }
+
+  .carousel-caption {
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Тень текста */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    color: white;
+    filter: drop-shadow(1px 1px 4px black); /* Тень кнопок */
+  }
+
+.carousel-item p, span{
+
 }
